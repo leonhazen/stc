@@ -1,0 +1,15 @@
+schema = 3
+
+[mod]
+  [mod."github.com/dustin/go-humanize"]
+    version = "v1.0.0"
+    hash = "sha256-gy4G1PnHD9iw2MitHX6y1y93qr3C9IncmXL7ttUMDs8="
+  [mod."github.com/go-resty/resty/v2"]
+    version = "v2.7.0"
+    hash = "sha256-vTjaL4JCRX3r6YbnpTBQv+ap2I/auN50ejgcqOVIgik="
+  [mod."github.com/hako/durafmt"]
+    version = "v0.0.0-20210608085754-5c1018a4e16b"
+    hash = "sha256-/IILmdwBY3tib/KhopKX0H8zr13dg9Z2XgPJkS0QkjI="
+  [mod."golang.org/x/net"]
+    version = "v0.0.0-20211029224645-99673261e6eb"
+    hash = "sha256-BK2jca/+H+sh3FGM8O1ImM83jDq9KvKreIfbeVrhzZ8="

@@ -1,4 +1,4 @@
-# STC - Syncthing Cli
+# STC - Syncthing CLI
 
 Stc is a command line tool for [Syncthing](https://syncthing.net/).
 It can be used to quickly check status of Syncthing from a terminal / command line

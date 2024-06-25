@@ -1,4 +1,4 @@
-module github.com/tenox7/stc
+module github.com/leonhazen/stc
 
 go 1.18
 

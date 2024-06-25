@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/tenox7/stc/api"
+	"github.com/leonhazen/stc/api"
 )
 
 func usage() {

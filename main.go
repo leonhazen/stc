@@ -28,7 +28,7 @@ import (
 
 	humanize "github.com/dustin/go-humanize"
 	"github.com/hako/durafmt"
-	"github.com/tenox7/stc/api"
+	"github.com/leonhazen/stc/api"
 )
 
 var (
