@@ -4,7 +4,6 @@ import (
 	"encoding/xml"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -33,7 +32,7 @@ func usage() {
 	)
 }
 
-func cfg(apiKey, target, homeDir string) (string, string, error) {
+func cfg(apiKey, target, configfile string) (string, string, error) {
 	if apiKey == "" {
 		apiKey = os.Getenv("APIKEY")
 	}
@@ -41,13 +40,18 @@ func cfg(apiKey, target, homeDir string) (string, string, error) {
 		return apiKey, target, nil
 	}
 
-	if homeDir == "" {
-		homeDir = filepath.Dir(os.Args[0])
+	if configfile == "" {
+		cfgDir, err := os.UserConfigDir()
+		if err != nil {
+			return "", "", err
+		}
+
+		configfile = filepath.Join(cfgDir, "syncthing", "config.xml")
 	}
 
 	var err error
 	var f []byte
-	f, err = ioutil.ReadFile(homeDir + string(os.PathSeparator) + "/config.xml")
+	f, err = os.ReadFile(configfile)
 	if err != nil {
 		return "", "", err
 	}

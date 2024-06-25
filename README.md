@@ -32,9 +32,8 @@ $ stc [flags] [commands]
 
 ### Easy Mode
 
-Place `stc` binary in Syncthing home directory and run it from there, or
-specify it with `--homedir=/path..`. Stc will try to find the URL and API
-Key on it's own.
+Run `stc` as the same user as Syncthing. It will look for config.xml in
+the XDG_CONFIG_HOME directory, or specify it with `--configfile=/path..`.
 
 ### Advanced / Remote Mode
 
@@ -44,8 +43,8 @@ Syncthing service. The API Key can be obtained from the Syncthing Web UI
 
 API Key can also be specified by `APIKEY` environmental variable.
 
-If you place `stc` binary in the Syncthing home folder or specify `--homedir`
-flag, it will try to obtain the right values from `config.xml`.
+If the config is not located in the same user's XDG config directory,
+(eg ~/.config/syncthing/config.xml), specify it with the `--configfile` flag.
 
 If you use TLS/SSL/https without valid certificate you can use the flag
 `--ignore_cert_errors` to suppress the errors. This is considered very insecure.
@@ -55,8 +54,8 @@ If you use TLS/SSL/https without valid certificate you can use the flag
 ```text
   --apikey              - Syncthing API Key
   --target              - URL of the Syncthing target
-  --homedir             - Path of Syncthing home directory, if specified stc
-                          will try to find apikey and target from config.xml
+  --configfile          - Path of Syncthing config.xml, if specified stc
+                          will try to find apikey and target from it
   --ignore_cert_errors  - Ignore cert errors while using https/SSL/TLS
 ```
 

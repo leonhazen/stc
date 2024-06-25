@@ -34,7 +34,7 @@ import (
 var (
 	apiKey  = flag.String("apikey", "", "Syncthing API Key")
 	target  = flag.String("target", "", "Syncthing Target URL")
-	homeDir = flag.String("homedir", "", "Syncthing Home Directory, used to get API Key and Target")
+	configfile = flag.String("configfile", "", "Syncthing config.xml path, used to get API Key and Target")
 	igCert  = flag.Bool("ignore_cert_errors", false, "ignore https/ssl/tls cert errors")
 )
 
@@ -222,7 +222,7 @@ func main() {
 	flag.Usage = usage
 	flag.Parse()
 
-	a, t, err := cfg(*apiKey, *target, *homeDir)
+	a, t, err := cfg(*apiKey, *target, *configfile)
 	if err != nil {
 		log.Fatal("apikey and target flags not specified, config file: ", err)
 	}
