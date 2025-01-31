@@ -1,3 +1,7 @@
+# Archived
+
+I forked this because I needed to change where the config files were located and wanted to add a nix flake. The upstream now supports using XDG_CONFIG_HOME, so a flake could just build from the original source.
+
 # STC - Syncthing CLI
 
 Stc is a command line tool for [Syncthing](https://syncthing.net/).
